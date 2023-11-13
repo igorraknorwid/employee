@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class SampleService extends Model
+{
+    use HasFactory;
+    protected $fillable = [
+        'sample_service_title', 'sample_service_price', 'sample_service_time', 'IsActive','IsDentistOnly','IsClientVisiable'
+    ];
+
+    public $timestamps = false;
+}
