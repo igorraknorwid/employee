@@ -16,8 +16,11 @@ class SampleServiceController extends Controller
 
     public function store(SampleServiceRequest $request)
     {
-        // You may add authorization logic here if needed
-        $sampleService = SampleService::create($request->validated());
+      
+        
+        $this->authorize('admin-role-controle');
+       
+         $sampleService = SampleService::create($request->validated());
         return new SampleServiceResource($sampleService);
     }
 
@@ -29,7 +32,7 @@ class SampleServiceController extends Controller
 
     public function update(SampleServiceRequest $request, string $id)
     {
-        // You may add authorization logic here if needed
+        $this->authorize('admin-role-controle');
         $sampleService = SampleService::findOrFail($id);
         $sampleService->update($request->validated());
         return response()->json(['message' => 'SampleService updated successfully']);
@@ -38,7 +41,7 @@ class SampleServiceController extends Controller
     public function destroy(string $id)
     {
         $sampleService = SampleService::findOrFail($id);
-        // You may add authorization logic here if needed
+        $this->authorize('admin-role-controle');
         $sampleService->delete();
         return response()->json(['message' => 'SampleService deleted successfully'], 200);
     }

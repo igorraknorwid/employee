@@ -22,12 +22,12 @@ class SampleServiceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'sample_service_title' => 'required|string|max:255',
-            'sample_service_price' => 'required|string',
-            'sample_service_time' => 'required|integer|min:1',
-            'IsActive' => 'required|boolean',
-            'IsDentistOnly'=> 'required|boolean',
-            'IsClientVisiable'=> 'required|boolean',
+            'sample_service_title' => 'required|string',
+             'sample_service_price' => 'required|string',
+             'sample_service_time' => 'required|integer|min:1',
+             'IsActive' => 'required|boolean',
+             'IsDentistOnly'=> 'required|boolean',
+             'IsClientVisible'=> 'required|boolean',
         ];
     }
 }

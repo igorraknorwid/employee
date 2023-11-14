@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('service_name');
             $table->boolean('isActive')->default(true);
             $table->decimal('service_price', 10, 2);
+            $table->unsignedBigInteger('sample_service_id');
 
             $table->timestamps();
         });

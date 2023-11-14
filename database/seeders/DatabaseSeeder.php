@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
         // \App\Models\Location::factory(2)->create();
         // \App\Models\Station::factory(4)->create();
         // \App\Models\Service::factory(8)->create();
-        \App\Models\SampleService::factory(8)->create();
+        //\App\Models\SampleService::factory(4)->create();
     }
 }

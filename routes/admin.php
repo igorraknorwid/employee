@@ -6,6 +6,7 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\StationController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DentalRoleController;
+use App\Http\Controllers\SampleServiceController;
 
 
 /*
@@ -13,8 +14,12 @@ use App\Http\Controllers\DentalRoleController;
 */
 
 //Dental Roles api keys
-Route::get('/dental-roles', [DentalRoleController::class, 'index'])->name('dental-roles.index');
-Route::get('/dental-roles/{id}', [DentalRoleController::class, 'show'])->name('dental-roles.show');
+// Route::get('/dental-roles', [DentalRoleController::class, 'index'])->name('dental-roles.index');
+// Route::get('/dental-roles/{id}', [DentalRoleController::class, 'show'])->name('dental-roles.show');
+
+//SampleServices api keys
+Route::get('/sample-services', [SampleServiceController::class, 'index'])->name('sample-services.index');
+Route::get('/sample-services/{id}', [SampleServiceController::class, 'show'])->name('sample-services.show');
 
 //Services api keys
 Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
@@ -55,16 +60,20 @@ Route::middleware('auth:admin')->group(function () {
     Route::put('/services/{id}', [ServiceController::class, 'update'])->name('services.update');
     Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
 
+    //SampleServices api keys
+     Route::post('/sample-services', [SampleServiceController::class, 'store'])->name('sample-services.store');   
+    Route::put('/sample-services/{id}', [SampleServiceController::class, 'update'])->name('sample-services.update');
+    Route::delete('/sample-services/{id}', [SampleServiceController::class, 'destroy'])->name('sample-services.destroy');
+
     //Dental role api keys    
-    Route::post('/dental-roles', [DentalRoleController::class, 'store'])->name('dental-roles.store');
-    Route::put('/dental-roles/{id}', [DentalRoleController::class, 'update'])->name('dental-roles.update');
-    Route::delete('/dental-roles/{id}', [DentalRoleController::class, 'destroy'])->name('dental-roles.destroy');
+    // Route::post('/dental-roles', [DentalRoleController::class, 'store'])->name('dental-roles.store');
+    // Route::put('/dental-roles/{id}', [DentalRoleController::class, 'update'])->name('dental-roles.update');
+    // Route::delete('/dental-roles/{id}', [DentalRoleController::class, 'destroy'])->name('dental-roles.destroy');
     });
 
 
 
 
-
-
+  
 
 

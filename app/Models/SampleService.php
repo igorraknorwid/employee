@@ -9,8 +9,13 @@ class SampleService extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'sample_service_title', 'sample_service_price', 'sample_service_time', 'IsActive','IsDentistOnly','IsClientVisiable'
+        'sample_service_title', 'sample_service_price', 'sample_service_time', 'IsActive','IsDentistOnly','IsClientVisible'
     ];
+
+    public function services()
+    {
+        return $this->hasMany(Service::class, 'service_id');
+    }
 
     public $timestamps = false;
 }

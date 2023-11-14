@@ -16,8 +16,19 @@ class SampleServiceFactory extends Factory
      */
     public function definition(): array
     {
+
+        $uniqueTitles = [
+            'Dental Check Up',
+            'Dental Check Up and Clean (Scale & Polish)',
+            'Free Invisalign Consultation',
+            'Emergency Consultation',
+            'Implant Assessment',
+            'Wisdom Tooth/Extraction Consultation',
+            'Facial Aesthetics Consultation',
+        ];
+
         return [
-            'sample_service_title' => fake()->randomElement([
+            'sample_service_title' => fake()->unique()->randomElement([
                 'Dental Check Up',
                 'Dental Check Up and Clean (Scale & Polish)',
                 'Free Invisalign Consultation',

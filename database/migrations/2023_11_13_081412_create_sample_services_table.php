@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('sample_service_time');
             $table->boolean('IsActive');
             $table->boolean('IsDentistOnly');
-            $table->boolean('IsClientVisiable');
+            $table->boolean('IsClientVisible');
         });
     }
 
