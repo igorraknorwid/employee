@@ -56,7 +56,7 @@ Route::middleware('auth:admin')->group(function () {
    Route::delete('/stations/{id}', [StationController::class, 'destroy'])->name('stations.destroy');
 
    //Service api keys
-     Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
+     Route::post('/services/{id}', [ServiceController::class, 'store'])->name('services.store');
     Route::put('/services/{id}', [ServiceController::class, 'update'])->name('services.update');
     Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
 

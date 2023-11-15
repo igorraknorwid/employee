@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\SampleService;
 use App\Http\Resources\ServiceResource;
 use App\Http\Requests\ServiceRequest;
 
@@ -14,11 +15,23 @@ class ServiceController extends Controller
         return ServiceResource::collection($services);
     }
 
-    public function store(ServiceRequest $request)
+    public function store( string $id)
     {      
         $this->authorize('admin-role-controle');
-        $service = Service::create($request->validated());
-        return new ServiceResource($service);
+        $sample_service = SampleService::findOrFail($id);
+       
+        $new_service = [
+            'service_name'=>$sample_service['sample_service_title'],
+            "isActive"=>true,
+            "service_price"=>$sample_service['sample_service_price'],
+            "service_time"=>$sample_service['sample_service_time'],
+            "sample_service_id"=>$sample_service['id'],
+
+        ];
+
+        dd($new_service);
+        // $service = Service::create($request->validated());
+        // return new ServiceResource($service);
     }
 
     public function show(string $id)
