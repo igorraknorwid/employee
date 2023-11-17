@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('day_id');
+            $table->boolean('IsBookable');
+            $table->boolean('IsActive');
             $table->timestamps();
         });
     }
