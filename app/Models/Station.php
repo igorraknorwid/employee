@@ -22,3 +22,4 @@ class Station extends Model
             ->withTimestamps();
     }
 }
+
