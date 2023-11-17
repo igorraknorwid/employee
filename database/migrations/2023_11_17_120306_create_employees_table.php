@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('second_name');
             $table->string('email')->nullable();
             $table->boolean('IsActive');
-            $table->boolean('IsDentist');
+            $table->boolean('IsDentistOnly');
 
             $table->timestamps();
         });
