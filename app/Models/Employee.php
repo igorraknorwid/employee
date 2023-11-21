@@ -12,7 +12,7 @@ class Employee extends Model
     
     public function sampleServices()
     {
-        return $this->belongsToMany(SampleServiceResource::class, 'employee_sample_service', 'employee_id', 'sample_service_id')
+        return $this->belongsToMany(SampleServiceResource::class, 'employee_sample_service', 'employee_id', 'sample_service_id','avatar_src')
             ->withPivot('employee_id', 'sample_service_id')
             ->withTimestamps();
     }

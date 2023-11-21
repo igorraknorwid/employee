@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('second_name');
             $table->string('email')->nullable();
+            $table->string('avatar_src')->nullable();
             $table->boolean('IsActive');
             $table->boolean('IsDentistOnly');
 
