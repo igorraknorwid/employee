@@ -17,5 +17,10 @@ class SampleService extends Model
         return $this->hasMany(Service::class, 'service_id');
     }
 
+    public function employees()
+    {
+        return $this->belongsToMany(Employee::class);
+    }
+
     public $timestamps = false;
 }
