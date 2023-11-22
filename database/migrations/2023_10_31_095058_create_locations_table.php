@@ -17,7 +17,7 @@ return new class extends Migration
             $table->boolean('isActive')->default(true);
 
             $table->string('google_map_link')->nullable();
-            $table->boolean('isMapActive')->default(true);
+            $table->boolean('isMapActive')->default(false);
 
             $table->string('city')->nullable();
             $table->string('street')->nullable();
