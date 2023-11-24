@@ -8,20 +8,29 @@ use Illuminate\Database\Eloquent\Model;
 class Visit extends Model
 {
     use HasFactory;
-    public function day()
-    {
-        return $this->belongsTo(Day::class);
-    }
+    protected $fillable = [
+        'customer_id',
+        'day_id',
+        'visit_start',
+        'IsBookable',
+        'IsActive',
+    ];
 
+    protected $casts = [        
+        'IsBookable' => 'boolean',
+        'IsActive' => 'boolean',
+    ];
+
+    // Define the relationship with the Customer model
     public function customer()
     {
         return $this->belongsTo(Customer::class);
     }
 
-    public function services()
+    // Define the relationship with the Day model
+    public function day()
     {
-        return $this->hasMany(Service::class);
+        return $this->belongsTo(Day::class);
     }
-
 
 }
