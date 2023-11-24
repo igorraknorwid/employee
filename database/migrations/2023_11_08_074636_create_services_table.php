@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('service_name');
+            $table->unsignedBigInteger('station_id');
+            $table->unsignedBigInteger('visit_id');
+            $table->boolean('isBookable')->default(false);
             $table->boolean('isActive')->default(true);
+         
+            $table->string('service_tittle');           
             $table->string('service_price');
             $table->string('service_time');
-            $table->unsignedBigInteger('sample_service_id');
-            $table->timestamps();
+           
+          
         });
     }
 

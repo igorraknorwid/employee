@@ -17,9 +17,11 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('second_name');
             $table->string('email')->nullable();
-            $table->string('avatar_src')->nullable();
+            $table->timestamp('phone_verified_at')->nullable();
+            $table->boolean('IsDentist');
             $table->boolean('IsActive');
-            $table->boolean('IsDentistOnly');
+            $table->string('avatar_src')->nullable();
+            $table->string('phone')->nullable();
 
             $table->timestamps();
         });

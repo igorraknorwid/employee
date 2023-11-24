@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('stations', function (Blueprint $table) {
             $table->id();
             $table->string('station_name');
-            $table->boolean('isActive')->default(true);
             $table->unsignedBigInteger('location_id');
-            $table->timestamps();
+            $table->boolean('isActive')->default(true);
+          
         });
     }
 

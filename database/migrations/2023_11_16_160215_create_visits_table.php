@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('day_id');
+            $table->unsignedBigInteger('visit_start');
             $table->boolean('IsBookable');
-            $table->boolean('IsActive');
-            $table->timestamps();
+            $table->boolean('IsActive');       
         });
     }
 

@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service_station', function (Blueprint $table) {
+        Schema::create('station_sample_service', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('service_id');
-            $table->unsignedBigInteger('station_id');
             $table->timestamps();
-    
-            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
+            $table->unsignedBigInteger('station_id');
+            $table->unsignedBigInteger('sample_service_id');
+
+            // Foreign key constraints
             $table->foreign('station_id')->references('id')->on('stations')->onDelete('cascade');
+            $table->foreign('sample_service_id')->references('id')->on('sample_services')->onDelete('cascade');
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_station');
+        Schema::dropIfExists('station_sample_service');
     }
 };

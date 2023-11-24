@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->unsignedInteger('role'); // Define the 'role' field as an unsigned integer
-            
+            $table->unsignedInteger('role'); 
+            $table->boolean('isActive')->default(true);
             $table->timestamps();
         });
     }

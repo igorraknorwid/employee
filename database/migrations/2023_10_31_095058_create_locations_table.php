@@ -23,8 +23,7 @@ return new class extends Migration
             $table->string('street')->nullable();
             $table->string('zip_code')->nullable();
             $table->string('local_number')->nullable();
-           
-            $table->timestamps();
+            
         });
     }
 
