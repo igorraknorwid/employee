@@ -8,9 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Day extends Model
 {
     use HasFactory;
-    protected $fillable = ['day','day_title', 'week', 'month', 'year'];
-    public $timestamps = false;
-    
+    protected $fillable = [
+        'day',
+        'day_title',
+        'week',
+        'month',
+        'year',
+    ];
+
+    // Define the relationship with the Visit model
     public function visits()
     {
         return $this->hasMany(Visit::class);
